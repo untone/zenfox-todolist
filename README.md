@@ -1,29 +1,13 @@
-# zenfox-todolist
+# Список пользователей:
 
-## Project setup
-```
-yarn install
-```
+Отображает таблицу пользователей с колонками name, email, phone по 5 пользователей на страницу.
+Ниже таблицы пейджер. Пейджер отображает номер текущей страницы и кнопки: Первая, Предыдущая, Следующая, Последняя.
+При клике на имени пользователя переходим на страницу Todo.
+Данные: https://jsonplaceholder.typicode.com/users?_page=1&_limit=5
+Общее количество пользователей извлекается из заголовка x-total-count.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+# Users Todo Page:
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Страница отображает имя выбранного пользователя в верхней части. Кнопку возвращения на список пользователей с сохранением номера страницы и полный список todo для пользователя.
+Список todo отображает статус (completed) в свободной форме.
+Данные: https://jsonplaceholder.typicode.com/todos?userId=2
