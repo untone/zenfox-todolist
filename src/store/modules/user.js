@@ -26,18 +26,17 @@ export const actions = {
     commit('SET_USER', user)
     dispatch('GET_TODOS', id)
   },
-  SET_USER({ getters, commit, dispatch }, user) {
-    commit('SET_USER', user)
-    dispatch('GET_TODOS', user.id)
-  },
   async GET_TODOS({ getters, commit }, id) {
     const params = {
       userId: id,
     }
     const list = await api.get('todos', params)
     const { data: todos = [] } = list
-
     commit('SET_TODOS', todos)
+  },
+  SET_USER({ getters, commit, dispatch }, user) {
+    commit('SET_USER', user)
+    dispatch('GET_TODOS', user.id)
   },
 }
 
