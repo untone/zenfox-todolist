@@ -11,6 +11,7 @@ export const state = {
 
 export const getters = {
   columns: state => state.columns,
+  limit: state => state.limit,
   page: state => state.page,
   ready: state => state.ready,
   users: state => state.users,
@@ -24,6 +25,9 @@ export const mutations = {
   SET_USERS(state, { users, total = 0 }) {
     state.users = users
     state.total = total
+  },
+  SET_PROGRESS(state, progress) {
+    state.progress = progress
   },
   SET_READY(state, ready) {
     state.ready = ready
@@ -46,7 +50,7 @@ export const actions = {
     })
     commit('SET_READY', true)
   },
-  SET_PAGE({ getters, state, commit, dispatch }, page) {
+  SET_PAGE({ commit, dispatch }, page) {
     commit('SET_PAGE', page)
     dispatch('GET_USERS')
   },

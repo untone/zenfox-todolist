@@ -20,21 +20,21 @@ export const mutations = {
 }
 
 export const actions = {
-  async GET_USER({ getters, commit, dispatch }, id) {
+  async GET_USER({ commit, dispatch }, id) {
     const response = await api.get(`users/${id}`)
     const { data: user = [] } = response
     commit('SET_USER', user)
     dispatch('GET_TODOS', id)
   },
-  async GET_TODOS({ getters, commit }, id) {
+  async GET_TODOS({ commit }, id) {
     const params = {
       userId: id,
     }
-    const list = await api.get('todos', params)
+    const list = await api.get('todos', { params })
     const { data: todos = [] } = list
     commit('SET_TODOS', todos)
   },
-  SET_USER({ getters, commit, dispatch }, user) {
+  SET_USER({ commit, dispatch }, user) {
     commit('SET_USER', user)
     dispatch('GET_TODOS', user.id)
   },

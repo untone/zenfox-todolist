@@ -63,25 +63,31 @@ export default {
 <template>
   <ol>
     <li>
-      <router-link :to="firstPage.path">
+      <component :is="page > 1 ? 'router-link' : 'span'" :to="firstPage.path">
         {{ firstPage.alias }}
-      </router-link>
+      </component>
     </li>
     <li>
-      <router-link :to="prevPage.path">
+      <component :is="page > 1 ? 'router-link' : 'span'" :to="prevPage.path">
         {{ prevPage.alias }}
-      </router-link>
+      </component>
     </li>
     <li>Page: {{ this.page }}</li>
     <li>
-      <router-link :to="nextPage.path">
+      <component
+        :is="page < total ? 'router-link' : 'span'"
+        :to="nextPage.path"
+      >
         {{ nextPage.alias }}
-      </router-link>
+      </component>
     </li>
     <li>
-      <router-link :to="lastPage.path">
+      <component
+        :is="page < total ? 'router-link' : 'span'"
+        :to="lastPage.path"
+      >
         {{ lastPage.alias }}
-      </router-link>
+      </component>
     </li>
   </ol>
 </template>
