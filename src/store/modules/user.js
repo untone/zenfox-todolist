@@ -23,7 +23,6 @@ export const actions = {
   async GET_USER({ getters, commit, dispatch }, id) {
     const response = await api.get(`users/${id}`)
     const { data: user = [] } = response
-
     commit('SET_USER', user)
     dispatch('GET_TODOS', id)
   },
