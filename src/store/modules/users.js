@@ -26,9 +26,6 @@ export const mutations = {
     state.users = users
     state.total = total
   },
-  SET_PROGRESS(state, progress) {
-    state.progress = progress
-  },
   SET_READY(state, ready) {
     state.ready = ready
   },
