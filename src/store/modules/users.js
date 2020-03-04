@@ -40,7 +40,6 @@ export const actions = {
     const { data: users = [], headers = {} } = response || {}
     const count = parseInt(headers['x-total-count'])
     const total = Math.ceil(count / getters.limit)
-
     commit('SET_USERS', {
       users,
       total,
