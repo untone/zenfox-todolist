@@ -26,7 +26,7 @@ export const actions = {
     commit('SET_USER', user)
     dispatch('GET_TODOS', id)
   },
-  async SET_USER({ getters, commit, dispatch }, user) {
+  SET_USER({ getters, commit, dispatch }, user) {
     commit('SET_USER', user)
     dispatch('GET_TODOS', user.id)
   },
