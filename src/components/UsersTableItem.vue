@@ -28,8 +28,8 @@ export default {
 <template>
   <tr>
     <td v-for="(column, index) in columns"
-:key="index"
->
+      :key="index"
+    >
       <router-link :to="path">
         {{ user[column] }}
       </router-link>
